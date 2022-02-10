@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <section id="navbar"></section>
+    <script>
+      $(function () {
+        $("#navbar").load("../sidebar.html");
+      });
+    </script>
+    <section class="heading"><h1>Bookmarks</h1></section>
+    <section id="header-bookmark">
+      <div class="nameBook">
+        <input type="text" id="bookmarkName" placeholder="Bookmark Name" />
+        <input type="color" id="bookmarkColor" value="#ff0000" />
+      </div>
+      <div class="addrBookmark">
+        <input type="text" id="bookmarkAddr" placeholder="Web Address" />
+        <button id="bookmarkBtn">Add a Bookmark</button>
+        
+      </div>
+      
+    </section>
+    <section id="bookmarks"></section>
+    <script src="../app.js"></script>
+    <script>
+          enterIsPressed("bookmarkName", "bookmarkBtn");
+          enterIsPressed("bookmarkAddr", "bookmarkBtn");
+        </script>
+  </body>
+</html>

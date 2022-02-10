@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <style>
+      body {
+        font-family: "Lato", sans-serif;
+      }
+
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidebar a:hover:not(.logo):not(.closebtn) {
+        color: #f1f1f1;
+        background-color: var(--secondary-color);
+        box-shadow: 5px 10px 30px rgba(128, 0, 128, 0.3);
+        transition: all ease 0.2s;
+        transform: translateY(-5px);
+      }
+
+      .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      .sidebar .closebtn:hover {
+        transform: scale(1.2);
+      }
+
+      .sidebar .logo {
+        position: absolute;
+        top: 0;
+        font-size: 36px;
+        color: #800080;
+      }
+      .sidebar .logo:hover {
+        color: #aa336a;
+        transform: scale(1.1);
+      }
+
+      #openbtn {
+        position: absolute;
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #800080;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 100%;
+        box-shadow: 20px 20px 20px black;
+        transition: all ease 0.2s;
+      }
+
+      #openbtn:hover {
+        transform:scale(1.1);
+      }
+
+      #main {
+        transition: margin-left 0.5s;
+        padding: 16px;
+        width: auto;
+      }
+
+      /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+      @media screen and (max-width: 450px) {
+        #openbtn {
+          position: relative;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mySidebar" class="sidebar">
+      <a href="#" class="logo">hhhhhh</a>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <br />
+      <a href="/tools/search.html"><i class="fas fa-search"></i> Search the web</a>
+      <a href="/tools/notes.html"><i class="far fa-sticky-note"></i> Make Notes</a>
+      <a href="/tools/bookmark.html"><i class="far fa-bookmark"></i> Bookmarks</a>
+      <a href="/tools/clock.html"><i class="far fa-clock"></i> Clock</a>
+    </div>
+    
+    <div id="main">
+      <button id="openbtn" onclick="openNav()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.getElementById("openbtn").style.visibility = "hidden";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        document.getElementById("openbtn").style.visibility = "visible";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../app.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <section id="navbar"></section>
+    <script>
+      $(function () {
+        $("#navbar").load("../sidebar.html");
+      });
+    </script>
+    <div class="heading">
+      <h1>Clock</h1>
+    </div>
+    <section id="clock-container">
+      <div class="clock">
+        <div class="display"></div>
+      </div>
+    </section>
+    <section id="clock-navbar">
+      <div >
+          <ul class="clock-links">
+        <li class="clock-link">
+          <a href="clock.html">Clock</a>
+        </li>
+        <li class="clock-link">
+          <a href="clock.html">Timer</a>
+        </li>
+        <li class="clock-link">
+          <a href="stopwatch.html">Stopwatch</a>
+        </li></ul>
+      </div>
+    </section>
+  </body>
+</html>
