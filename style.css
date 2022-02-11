@@ -25,7 +25,7 @@ ul {
   padding: 0;
 }
 
-ul li {
+ul li:not(.clock-links li) {
   cursor: pointer;
   position: relative;
   padding: 12px 8px 12px 40px;
@@ -400,17 +400,20 @@ img {
 }
 
 #bookmarks {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   padding-top: 20px;
   padding-left: 15%;
   padding-right: 15%;
   padding-bottom: 20px;
   grid-gap: 20px;
+  justify-content: center;
 }
 
 .bookmark {
   display: table;
+  width:250px;
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
@@ -482,57 +485,69 @@ img {
   font-family: "Orbitron", sans-serif;
 }
 
-
-#clock-navbar{
-  display:flex;
-  position:absolute;
+#clock-navbar {
+  display: flex;
+  position: absolute;
   justify-content: center;
-  bottom:0;
+  bottom: 0;
   right: 0;
   left: 0;
   padding-bottom: 30px;
 }
 
-.clock-links{
-  margin-top:auto;
+.clock-links {
+  margin-top: auto;
   display: flex;
   justify-content: center;
-  font-size: 3.5vw;
+  font-size: 2.5vw;
   justify-content: space-between;
-  margin:0;
+  margin: 0;
   list-style-type: none;
 }
 
-.clock-links li a {
-  color:var(--text-color);
-  text-decoration:none;
+.clock-links li {
+  padding: 20px;
+  transition: all 0.1s ease-in-out;
 }
 
-.clock-links li:hover{
+.clock-links li:nth-of-type(even) {
+  border-right: 2px solid var(--black-secondary-color);
+  border-left: 2px solid var(--black-secondary-color);
+}
+
+.clock-links li a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.clock-links li:hover {
   text-decoration: underline;
-  transform:translateY(-5px);
+  transform: translateY(-10px);
 }
 
 #stopwatch {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  
   height: 100%;
 }
 
-.wrapper {
-  width: 800px;
-  margin: 30px auto;
-  color: #fff;
+.wrapper,
+.num-container {
+  width: 100%;
+  color: var(--text-color);
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-
-
-#seconds,
-#tens {
-  font-size: 2em;
+#nums,#showmns,#showscs,#colon {
+  font-size: 3rem;
+  text-align: center;
+  font-family: "orbitron";
 }
 
 .stopwatch-button {
+  font-family: "poppins";
   border-radius: 5px;
   background: var(--primary-color);
   color: #fff;
@@ -546,8 +561,30 @@ img {
   outline: none;
 }
 .stopwatch-button:hover {
-  transition: all 0.5s ease-in-out;
-  transform:scale(1.05);
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.05);
+  box-shadow: 20px 20px 20px black;
+}
+
+.ct-inputs{
+  display:flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.ct-inputs input{
+  width: 70px;
+  border: 3px solid var(--purple-secondary-color);
+  background-color: var(--black-secondary-color);
+  height: 50px;
+  padding: 5px;
+  color: var(--text-color);
+}
+
+.ct-inputs input::placeholder{
+  color:lightgray;
 }
 
 /* ------------------------------ Media queries ----------------------------- */
@@ -579,7 +616,7 @@ img {
   #bookmarkBtn {
     width: auto;
   }
-  .clock .display{
+  .clock .display {
     font-size: 1rem;
   }
 }

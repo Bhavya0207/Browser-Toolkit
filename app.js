@@ -69,7 +69,7 @@ function load2() {
     myTxt = txt[i];
     var li = document.createElement("li");
     li.className = "box";
-    if (window.location.pathname == '/tools/notes.html') {
+    if (window.location.pathname == "/tools/notes.html") {
       document.getElementById("myUL").appendChild(li);
     }
     var span = document.createElement("SPAN");
@@ -284,38 +284,170 @@ const newBookmark = () => {
   name.value = "";
   address.value = "";
 };
-if (window.location.pathname == '/tools/bookmark.html') {
-var addBookmark = document.getElementById("bookmarkBtn");
-addBookmark.onclick = newBookmark;}
+if (window.location.pathname == "/tools/bookmark.html") {
+  var addBookmark = document.getElementById("bookmarkBtn");
+  addBookmark.onclick = newBookmark;
+}
 
-if (window.location.pathname == '/tools/clock.html') {
-  console.log("x")
-setInterval(function () {
-  const clock = document.querySelector(".display");
-  let time = new Date();
-  let sec = time.getSeconds();
-  let min = time.getMinutes();
-  let hr = time.getHours();
-  let day = "AM";
-  if (hr > 12) {
-    day = "PM";
-    hr = hr - 12;
+if (window.location.pathname == "/tools/clock.html") {
+  console.log("x");
+  setInterval(function () {
+    const clock = document.querySelector(".display");
+    let time = new Date();
+    let sec = time.getSeconds();
+    let min = time.getMinutes();
+    let hr = time.getHours();
+    let day = "AM";
+    if (hr > 12) {
+      day = "PM";
+      hr = hr - 12;
+    }
+    if (hr == 0) {
+      hr = 12;
+    }
+    if (sec < 10) {
+      sec = "0" + sec;
+    }
+    if (min < 10) {
+      min = "0" + min;
+    }
+    if (hr < 10) {
+      hr = "0" + hr;
+    }
+    try {
+      clock.textContent = hr + ":" + min + ":" + sec + " " + day;
+    } catch (err) {
+      console.log("s");
+    }
+  });
+}
+
+var timer = document.getElementById("nums");
+console.log(timer);
+
+var hr = 0;
+var min = 0;
+var sec = 0;
+var stoptime = true;
+
+function startTimer() {
+  console.log("xx");
+  if (stoptime == true) {
+    stoptime = false;
+    timerCycle();
   }
-  if (hr == 0) {
-    hr = 12;
+}
+function stopTimer() {
+  if (stoptime == false) {
+    stoptime = true;
   }
-  if (sec < 10) {
-    sec = "0" + sec;
+}
+
+function timerCycle() {
+  if (stoptime == false) {
+    sec = parseInt(sec);
+    min = parseInt(min);
+    hr = parseInt(hr);
+
+    sec = sec + 1;
+
+    if (sec == 60) {
+      min = min + 1;
+      sec = 0;
+    }
+    if (min == 60) {
+      hr = hr + 1;
+      min = 0;
+      sec = 0;
+    }
+
+    if (sec < 10 || sec == 0) {
+      sec = "0" + sec;
+    }
+    if (min < 10 || min == 0) {
+      min = "0" + min;
+    }
+    if (hr < 10 || hr == 0) {
+      hr = "0" + hr;
+    }
+
+    timer.innerHTML = hr + ":" + min + ":" + sec;
+
+    setTimeout("timerCycle()", 1000);
   }
-  if (min < 10) {
-    min = "0" + min;
+}
+
+function resetTimer() {
+  timer.innerHTML = "00:00:00";
+  stoptime = true;
+  hr = 0;
+  sec = 0;
+  min = 0;
+}
+
+var ctmnts = 0;
+var ctsecs = 0;
+var startchr = 0;
+
+function countdownTimer() {
+  var mns=document.getElementById("mns");
+  var scs=document.getElementById("scs");
+  if (
+    startchr == 0 &&
+    document.getElementById("mns") &&
+    document.getElementById("scs")
+  ) {
+    // makes sure the script uses integer numbers
+    ctmnts = parseInt(document.getElementById("mns").value) + 0;
+    ctsecs = parseInt(document.getElementById("scs").value) * 1;
+
+    // if data not a number, sets the value to 0
+    if (isNaN(ctmnts)) ctmnts = 0;
+    if (isNaN(ctsecs)) ctsecs = 0;
+
+    // rewrite data in form fields to be sure that the fields for minutes and seconds contain integer number
+    document.getElementById("mns").value = ctmnts;
+    document.getElementById("scs").value = ctsecs;
+    startchr = 1;
+    document.getElementById("btnct").setAttribute("disabled", "disabled"); // disable the button
   }
-  if (hr < 10) {
-    hr = "0" + hr;
+
+  // if minutes and seconds are 0, sets $startchr to 0, and return false
+  if (ctmnts == 0 && ctsecs == 0) {
+    startchr = 0;
+    document.getElementById("btnct").removeAttribute("disabled"); // remove "disabled" to enable the button
+
+    /* HERE YOU CAN ADD TO EXECUTE A JavaScript FUNCTION WHEN COUNTDOWN TIMER REACH TO 0 */
+    alert("Time Up");
+    return false;
+  } else {
+    // decrease seconds, and decrease minutes if seconds reach to 0
+    ctsecs--;
+    if (ctsecs < 0) {
+      if (ctmnts > 0) {
+        ctsecs = 59;
+        ctmnts--;
+      } else {
+        ctsecs = 0;
+        ctmnts = 0;
+      }
+    }
   }
-  try{
-  clock.textContent = hr + ":" + min + ":" + sec + " " + day;}
-  catch(err){
-    console.log("s")
+
+  var fsecs = ctsecs;
+  var fmins = ctmnts;
+  if (fmins <= 9 && fsecs >= 10) {
+    fmins = "0" + ctmnts;
+    fsecs = ctsecs;
+  } else if (fsecs <= 9 && fmins >= 10) {
+    fmins = ctmnts;
+    fsecs = "0" + ctsecs;
+  } else if (fsecs <= 9 && fmins <= 9) {
+    fmins = "0" + ctmnts;
+    fsecs = "0" + ctsecs;
   }
-});}
+
+  document.getElementById("showmns").innerHTML = fmins;
+  document.getElementById("showscs").innerHTML = fsecs;
+  setTimeout("countdownTimer()", 1000);
+}

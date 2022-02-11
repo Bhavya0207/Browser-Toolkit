@@ -10,7 +10,6 @@
       href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <title>Document</title>
   </head>
   <body>
@@ -21,17 +20,20 @@
       });
     </script>
     <div class="heading">
-      <h1>Stopwatch</h1>
+      <h1>Timer</h1>
     </div>
-    <section id="stopwatch">
+    <section id="countdown" style="color: #fff">
       <div class="num-container">
-        <p><span id="nums">00:00:00</span></p>
+        <span id="showmns">00</span><span id="colon">:</span><span id="showscs">00</span>
+      </div>
+      <div class="ct-inputs">
+        <input type="text" id="mns" placeholder="Minutes"/>
+        <input type="text" id="scs" placeholder="Seconds"/>
       </div>
       <div class="wrapper">
-        <button class="stopwatch-button" onclick="startTimer()">Start</button>
-        <button class="stopwatch-button" onclick="stopTimer()">Stop</button>
-        <button class="stopwatch-button" onclick="resetTimer()">Reset</button>
-      </div>
+      <button type="button" id="btnct" class="stopwatch-button" onclick="countdownTimer()">
+        Start Count
+      </button></div>
     </section>
     <script src="../app.js"></script>
     <section id="clock-navbar">

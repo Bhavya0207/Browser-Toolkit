@@ -6,9 +6,11 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nova+Square&family=Orbitron:wght@500&family=Poppins&display=swap");
       body {
-        font-family: "Lato", sans-serif;
+        font-family: "poppins", sans-serif;
       }
 
       .sidebar {
@@ -55,8 +57,10 @@
       .sidebar .logo {
         position: absolute;
         top: 0;
-        font-size: 36px;
+        font-size: 40px;
         color: #800080;
+        padding-top: 10px;
+        font-family: "nova square";
       }
       .sidebar .logo:hover {
         color: #aa336a;
@@ -77,7 +81,7 @@
       }
 
       #openbtn:hover {
-        transform:scale(1.1);
+        transform: scale(1.1);
       }
 
       #main {
@@ -86,7 +90,14 @@
         width: auto;
       }
 
-      /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+      .menu-links {
+        display: none;
+      }
+
+      #menu-clock {
+        cursor: pointer;
+      }
+
       @media screen and (max-width: 450px) {
         #openbtn {
           position: relative;
@@ -96,15 +107,32 @@
   </head>
   <body>
     <div id="mySidebar" class="sidebar">
-      <a href="#" class="logo">hhhhhh</a>
+      <a href="#" class="logo">Toolkit</a>
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
       <br />
-      <a href="/tools/search.html"><i class="fas fa-search"></i> Search the web</a>
-      <a href="/tools/notes.html"><i class="far fa-sticky-note"></i> Make Notes</a>
-      <a href="/tools/bookmark.html"><i class="far fa-bookmark"></i> Bookmarks</a>
-      <a href="/tools/clock.html"><i class="far fa-clock"></i> Clock</a>
+      <a href="/tools/search.html"><i class="fas fa-search"></i> Web search</a>
+      <a href="/tools/notes.html"
+        ><i class="far fa-sticky-note"></i> Make Notes</a
+      >
+      <a href="/tools/bookmark.html"
+        ><i class="far fa-bookmark"></i> Bookmarks</a
+      >
+      <a id="menu-clock"
+        ><i class="far fa-clock"></i> Clock
+</a>
+      <div class="menu-links" id="links-clock">
+        <a href="/tools/clock.html"
+          ><i class="fas fa-arrow-right"></i> Digital Clock</a
+        >
+        <a href="/tools/stopwatch.html"
+          ><i class="fas fa-arrow-right"></i> Stopwatch</a
+        >
+        <a href="/tools/timer.html">
+          <i class="fas fa-arrow-right"></i> Timer
+        </a>
+      </div>
     </div>
-    
+
     <div id="main">
       <button id="openbtn" onclick="openNav()">
         <i class="fas fa-bars"></i>
@@ -123,6 +151,9 @@
         document.getElementById("main").style.marginLeft = "0";
         document.getElementById("openbtn").style.visibility = "visible";
       }
+      $(document).on("click", "#menu-clock", function () {
+        $("#links-clock").slideToggle("Fast");
+      });
     </script>
   </body>
 </html>
