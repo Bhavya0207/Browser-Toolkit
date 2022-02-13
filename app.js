@@ -106,14 +106,10 @@ window.addEventListener("load", function () {
   load1();
 });
 
-window.onbeforeunload = function () {
+function beforeLoad() {
   var titles = [];
   var texts = [];
-  var names = [];
-  var links = [];
-  var colors = [];
   var boxes = document.getElementsByClassName("box");
-  var bookmarks = document.getElementsByClassName("bookmark");
   var i;
   for (i = 0; i < boxes.length; i++) {
     var flip = boxes[i].querySelector(".flip").innerHTML;
@@ -123,6 +119,14 @@ window.onbeforeunload = function () {
     localStorage.setItem("title", JSON.stringify(titles));
     localStorage.setItem("text", JSON.stringify(texts));
   }
+}
+
+function beforeLoad2() {
+  var names = [];
+  var links = [];
+  var colors = [];
+  var bookmarks = document.getElementsByClassName("bookmark");
+
   var q;
   for (q = 0; q < bookmarks.length; q++) {
     var name = bookmarks[q].querySelector(".span").innerHTML;
@@ -131,11 +135,21 @@ window.onbeforeunload = function () {
     names.push(name);
     links.push(Alink);
     colors.push(color);
+    localStorage.setItem("name", JSON.stringify(names));
+    localStorage.setItem("link", JSON.stringify(links));
+    localStorage.setItem("color", JSON.stringify(colors));
   }
-  localStorage.setItem("name", JSON.stringify(names));
-  localStorage.setItem("link", JSON.stringify(links));
-  localStorage.setItem("color", JSON.stringify(colors));
-};
+  
+}
+
+window.addEventListener("beforeunload", function () {
+  beforeLoad2();
+});
+
+window.addEventListener("beforeunload", function () {
+  beforeLoad();
+});
+
 var close = document.getElementsByClassName("close");
 var i;
 for (i = 0; i < close.length; i++) {
@@ -279,6 +293,9 @@ const newBookmark = () => {
       e.stopPropagation();
       console.log("trash clicked");
       this.parentElement.remove();
+      localStorage.removeItem("name")
+      localStorage.removeItem("color")
+      localStorage.removeItem("link")
     };
   }
   name.value = "";
@@ -323,7 +340,6 @@ if (window.location.pathname == "/tools/clock.html") {
 }
 
 var timer = document.getElementById("nums");
-console.log(timer);
 
 var hr = 0;
 var min = 0;
@@ -331,7 +347,6 @@ var sec = 0;
 var stoptime = true;
 
 function startTimer() {
-  console.log("xx");
   if (stoptime == true) {
     stoptime = false;
     timerCycle();
@@ -390,8 +405,8 @@ var ctsecs = 0;
 var startchr = 0;
 
 function countdownTimer() {
-  var mns=document.getElementById("mns");
-  var scs=document.getElementById("scs");
+  var mns = document.getElementById("mns");
+  var scs = document.getElementById("scs");
   if (
     startchr == 0 &&
     document.getElementById("mns") &&
