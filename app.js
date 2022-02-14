@@ -412,31 +412,27 @@ function countdownTimer() {
     document.getElementById("mns") &&
     document.getElementById("scs")
   ) {
-    // makes sure the script uses integer numbers
     ctmnts = parseInt(document.getElementById("mns").value) + 0;
     ctsecs = parseInt(document.getElementById("scs").value) * 1;
 
-    // if data not a number, sets the value to 0
+
     if (isNaN(ctmnts)) ctmnts = 0;
     if (isNaN(ctsecs)) ctsecs = 0;
 
-    // rewrite data in form fields to be sure that the fields for minutes and seconds contain integer number
+    
     document.getElementById("mns").value = ctmnts;
     document.getElementById("scs").value = ctsecs;
     startchr = 1;
-    document.getElementById("btnct").setAttribute("disabled", "disabled"); // disable the button
+    document.getElementById("btnct").setAttribute("disabled", "disabled"); 
   }
 
-  // if minutes and seconds are 0, sets $startchr to 0, and return false
   if (ctmnts == 0 && ctsecs == 0) {
     startchr = 0;
-    document.getElementById("btnct").removeAttribute("disabled"); // remove "disabled" to enable the button
+    document.getElementById("btnct").removeAttribute("disabled"); 
 
-    /* HERE YOU CAN ADD TO EXECUTE A JavaScript FUNCTION WHEN COUNTDOWN TIMER REACH TO 0 */
     alert("Time Up");
     return false;
   } else {
-    // decrease seconds, and decrease minutes if seconds reach to 0
     ctsecs--;
     if (ctsecs < 0) {
       if (ctmnts > 0) {

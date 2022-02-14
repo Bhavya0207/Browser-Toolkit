@@ -34,12 +34,9 @@ ul li:not(.clock-links li) {
   align-items: center;
 }
 
-/* Darker background-color on hover */
 ul li:hover:not(.clock-links li) {
   background-color: var(--black-secondary-color);
 }
-
-/* Style the close button */
 .close {
   position: absolute;
   float: right;
@@ -54,7 +51,6 @@ ul li:hover:not(.clock-links li) {
   transform: scale(1.1);
 }
 
-/* Style the header */
 .header {
   background-color: var(--primary-color);
   padding: 30px 40px;
@@ -62,14 +58,12 @@ ul li:hover:not(.clock-links li) {
   text-align: center;
 }
 
-/* Clear floats after the header */
 .header:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Style the input */
 .input {
   margin: 0;
   border: none;
@@ -81,7 +75,6 @@ ul li:hover:not(.clock-links li) {
   border-radius: 5px 0px 0px 5px;
 }
 
-/* Style the "Add" button */
 #addBtn {
   padding: 10px;
   width: 25%;
@@ -132,9 +125,9 @@ ul li:hover:not(.clock-links li) {
   box-sizing: border-box;
 }
 
-/* -------------------------------------------------------------------------- */
-/*                             Search the web css                             */
-/* -------------------------------------------------------------------------- */
+/** -------------------------------------------------------------------------- */
+/**                             Search the web css                             */
+/** -------------------------------------------------------------------------- */
 
 #search {
   box-sizing: border-box;
@@ -152,14 +145,12 @@ img {
   height: 200px;
 }
 
-/* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
   position: relative;
   margin: auto;
 }
 
-/* Next & previous buttons */
 .prev,
 .next {
   cursor: pointer;
@@ -176,13 +167,11 @@ img {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
   background-color: var(--purple-secondary-color);
@@ -190,7 +179,6 @@ img {
   transform: scale(1.1);
 }
 
-/* Caption text */
 .text {
   color: #f2f2f2;
   font-size: 15px;
@@ -201,7 +189,6 @@ img {
   text-align: center;
 }
 
-/* Fading animation */
 .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
@@ -226,8 +213,6 @@ img {
     opacity: 1;
   }
 }
-
-/* On smaller screens, decrease text size */
 
 .search {
   width: 100%;
@@ -331,9 +316,9 @@ img {
   transform: translateY(-5px);
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                 Header css                                 */
-/* -------------------------------------------------------------------------- */
+/** -------------------------------------------------------------------------- */
+/**                                 Header css                                 */
+/** -------------------------------------------------------------------------- */
 
 #header-bookmark {
   background-color: var(--primary-color);
@@ -413,7 +398,7 @@ img {
 
 .bookmark {
   display: table;
-  width:250px;
+  width: 250px;
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
@@ -459,9 +444,9 @@ img {
   position: absolute;
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                  clock css                                 */
-/* -------------------------------------------------------------------------- */
+/** -------------------------------------------------------------------------- */
+/**                                  clock css                                 */
+/** -------------------------------------------------------------------------- */
 
 #clock-container {
   padding-top: 50px;
@@ -472,14 +457,13 @@ img {
 }
 .clock {
   height: 120px;
-
   line-height: 120px;
   text-align: center;
   padding: 0 30px;
   box-shadow: 20px 20px 20px black;
 }
 .clock .display {
-  font-size: 10vw;
+  font-size: 8vw;
   color: var(--primary-color);
   letter-spacing: 5px;
   font-family: "Orbitron", sans-serif;
@@ -526,7 +510,6 @@ img {
 }
 
 #stopwatch {
-  
   height: 100%;
 }
 
@@ -540,7 +523,10 @@ img {
   flex-wrap: wrap;
 }
 
-#nums,#showmns,#showscs,#colon {
+#nums,
+#showmns,
+#showscs,
+#colon {
   font-size: 3rem;
   text-align: center;
   font-family: "orbitron";
@@ -566,15 +552,15 @@ img {
   box-shadow: 20px 20px 20px black;
 }
 
-.ct-inputs{
-  display:flex;
+.ct-inputs {
+  display: flex;
   gap: 1em;
   flex-wrap: wrap;
   justify-content: center;
   padding: 20px;
 }
 
-.ct-inputs input{
+.ct-inputs input {
   width: 70px;
   border: 3px solid var(--purple-secondary-color);
   background-color: var(--black-secondary-color);
@@ -583,8 +569,8 @@ img {
   color: var(--text-color);
 }
 
-.ct-inputs input::placeholder{
-  color:lightgray;
+.ct-inputs input::placeholder {
+  color: lightgray;
 }
 
 /* ------------------------------ Media queries ----------------------------- */
@@ -616,7 +602,7 @@ img {
   #bookmarkBtn {
     width: auto;
   }
-  .clock .display {
+  /* .clock .display {
     font-size: 1rem;
-  }
+  } */
 }
