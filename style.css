@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nova+Square&family=Orbitron:wght@500&family=Poppins&display=swap");
 :root {
-  --background-color: #111;
+  --background-color: #000109;
   --primary-color: #800080;
   --text-color: #fff;
   --purple-secondary-color: #301934;
@@ -308,7 +308,8 @@ img {
   display: inline;
   color: var(--primary-color);
   box-shadow: 20px 20px 20px black;
-  background-color: rgba(255, 255, 255, 0.1);
+  /* background-color: rgba(10,37,37,0.7); */
+  background-color:rgba(255, 255, 255, 0.1);
   transition: transform 250ms;
 }
 
