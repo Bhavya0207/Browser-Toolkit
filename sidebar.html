@@ -23,7 +23,7 @@
         background-color: #000109;
         overflow-x: hidden;
         transition: 0.5s;
-        padding-top: 60px;
+        /* padding-top: 20px; */
         box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
       }
 
@@ -46,8 +46,8 @@
 
       .sidebar .closebtn {
         position: absolute;
-        top: 0;
-        right: 25px;
+        top: 0px;
+        right: 15px;
         font-size: 36px;
         margin-left: 50px;
       }
@@ -56,16 +56,18 @@
       }
 
       .sidebar .logo {
-        position: absolute;
+        position: relative;
         top: 0;
         font-size: 40px;
         color: #800080;
         padding-top: 10px;
         font-family: "nova square";
+        word-wrap: break-word;
+        width: 200px;
       }
       .sidebar .logo:hover {
         color: #aa336a;
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
 
       #openbtn {
@@ -99,8 +101,8 @@
         cursor: pointer;
       }
 
-      i:not(.fa-bars){
-        color:#800080;
+      i:not(.fa-bars) {
+        color: #800080;
       }
 
       @media screen and (max-width: 450px) {
@@ -113,7 +115,7 @@
   <body>
     <div id="mySidebar" class="sidebar">
       <div id="container" style="display: none">
-        <a href="/index.html" class="logo">Toolkit</a>
+        <a href="/index.html" class="logo">BrowserToolkit</a>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <br />
         <a href="/tools/search.html"
@@ -153,8 +155,8 @@
           "2px solid #800080";
         document.getElementById("main").style.marginLeft = "250px";
         document.getElementById("openbtn").style.visibility = "hidden";
-        const timeout=setTimeout(() => {
-          console.log("x")
+        const timeout = setTimeout(() => {
+          console.log("x");
           document.getElementById("container").style.display = "block";
         }, 275);
       }

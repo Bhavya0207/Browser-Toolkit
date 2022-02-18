@@ -314,9 +314,7 @@ img {
   transition: transform 250ms;
 }
 
-.heading h1:hover {
-  transform: translateY(-5px);
-}
+
 
 /** -------------------------------------------------------------------------- */
 /**                                 Header css                                 */
