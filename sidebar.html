@@ -99,6 +99,10 @@
         cursor: pointer;
       }
 
+      i:not(.fa-bars){
+        color:#800080;
+      }
+
       @media screen and (max-width: 450px) {
         #openbtn {
           position: relative;
@@ -108,29 +112,31 @@
   </head>
   <body>
     <div id="mySidebar" class="sidebar">
-      <a href="/index.html" class="logo">Toolkit</a>
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-      <br />
-      <a href="/tools/search.html"><i class="fas fa-search"></i> Web search</a>
-      <a href="/tools/notes.html"
-        ><i class="far fa-sticky-note"></i> Make Notes</a
-      >
-      <a href="/tools/bookmark.html"
-        ><i class="far fa-bookmark"></i> Bookmarks</a
-      >
-      <a id="menu-clock"
-        ><i class="far fa-clock"></i> Clock
-</a>
-      <div class="menu-links" id="links-clock">
-        <a href="/tools/clock.html"
-          ><i class="fas fa-arrow-right"></i> Digital Clock</a
+      <div id="container" style="display: none">
+        <a href="/index.html" class="logo">Toolkit</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <br />
+        <a href="/tools/search.html"
+          ><i class="fas fa-search"></i> Web search</a
         >
-        <a href="/tools/stopwatch.html"
-          ><i class="fas fa-arrow-right"></i> Stopwatch</a
+        <a href="/tools/notes.html"
+          ><i class="far fa-sticky-note"></i> Make Notes</a
         >
-        <a href="/tools/timer.html">
-          <i class="fas fa-arrow-right"></i> Timer
-        </a>
+        <a href="/tools/bookmark.html"
+          ><i class="far fa-bookmark"></i> Bookmarks</a
+        >
+        <a id="menu-clock"><i class="far fa-clock"></i> Clock </a>
+        <div class="menu-links" id="links-clock">
+          <a href="/tools/clock.html"
+            ><i class="fas fa-arrow-right"></i> Digital Clock</a
+          >
+          <a href="/tools/stopwatch.html"
+            ><i class="fas fa-arrow-right"></i> Stopwatch</a
+          >
+          <a href="/tools/timer.html">
+            <i class="fas fa-arrow-right"></i> Timer
+          </a>
+        </div>
       </div>
     </div>
 
@@ -143,16 +149,22 @@
     <script>
       function openNav() {
         document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("mySidebar").style.borderRight= "2px solid #800080";
+        document.getElementById("mySidebar").style.borderRight =
+          "2px solid #800080";
         document.getElementById("main").style.marginLeft = "250px";
         document.getElementById("openbtn").style.visibility = "hidden";
+        const timeout=setTimeout(() => {
+          console.log("x")
+          document.getElementById("container").style.display = "block";
+        }, 275);
       }
 
       function closeNav() {
         document.getElementById("mySidebar").style.width = "0";
-document.getElementById("mySidebar").style.border= "none";
+        document.getElementById("mySidebar").style.border = "none";
         document.getElementById("main").style.marginLeft = "0";
         document.getElementById("openbtn").style.visibility = "visible";
+        document.getElementById("container").style.display = "none";
       }
       $(document).on("click", "#menu-clock", function () {
         $("#links-clock").slideToggle("Fast");
