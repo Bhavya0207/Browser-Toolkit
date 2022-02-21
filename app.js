@@ -69,7 +69,7 @@ function load2() {
     myTxt = txt[i];
     var li = document.createElement("li");
     li.className = "box";
-    if (window.location.pathname == "/tools/notes.html") {
+    if (window.location.pathname == "/tools/notes.html" || window.location.pathname == "/tools/notes") {
       console.log("check2")
       document.getElementById("myUL").appendChild(li);
     }
@@ -302,13 +302,19 @@ const newBookmark = () => {
   name.value = "";
   address.value = "";
 };
-if (window.location.pathname == "/tools/bookmarks.html") {
-  console.log("check")
+if (
+  window.location.pathname == "/tools/bookmarks.html" ||
+  window.location.pathname == "/tools/bookmarks"
+) {
+  console.log("check");
   var addBookmark = document.getElementById("bookmarkBtn");
   addBookmark.onclick = newBookmark;
 }
 
-if (window.location.pathname == "/tools/clock.html") {
+if (
+  window.location.pathname == "/tools/clock.html" ||
+  window.location.pathname == "/tools/clock"
+) {
   console.log("x");
   setInterval(function () {
     const clock = document.querySelector(".display");
