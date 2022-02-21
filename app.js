@@ -301,7 +301,7 @@ const newBookmark = () => {
   name.value = "";
   address.value = "";
 };
-if (window.location.pathname == "/tools/bookmark.html") {
+if (window.location.pathname == "/tools/bookmarks.html") {
   console.log("check")
   var addBookmark = document.getElementById("bookmarkBtn");
   addBookmark.onclick = newBookmark;
