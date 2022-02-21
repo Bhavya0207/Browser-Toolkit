@@ -70,6 +70,7 @@ function load2() {
     var li = document.createElement("li");
     li.className = "box";
     if (window.location.pathname == "/tools/notes.html") {
+      console.log("check2")
       document.getElementById("myUL").appendChild(li);
     }
     var span = document.createElement("SPAN");
