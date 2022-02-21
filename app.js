@@ -302,6 +302,7 @@ const newBookmark = () => {
   address.value = "";
 };
 if (window.location.pathname == "/tools/bookmark.html") {
+  console.log("check")
   var addBookmark = document.getElementById("bookmarkBtn");
   addBookmark.onclick = newBookmark;
 }
