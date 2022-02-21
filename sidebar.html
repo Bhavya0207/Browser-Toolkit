@@ -46,10 +46,14 @@
 
       .sidebar .closebtn {
         position: absolute;
-        top: 0px;
+        top: 20px;
         right: 15px;
         font-size: 36px;
         margin-left: 50px;
+        cursor: pointer;
+        background:none;
+        border: none;
+        color: #fff;
       }
       .sidebar .closebtn:hover {
         transform: scale(1.2);
@@ -116,7 +120,7 @@
     <div id="mySidebar" class="sidebar">
       <div id="container" style="display: none">
         <a href="/index.html" class="logo">BrowserToolkit</a>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <button class="closebtn" onclick="closeNav()">×</button>
         <br />
         <a href="/tools/search.html"
           ><i class="fas fa-search"></i> Web search</a
