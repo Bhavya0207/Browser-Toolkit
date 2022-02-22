@@ -43,7 +43,10 @@ function load1() {
     bookmark.appendChild(button);
     bookmark.appendChild(span);
     bookmark.setAttribute("style", color);
-    bookmarks.appendChild(bookmark);
+    try {
+      bookmarks.appendChild(bookmark); 
+    } catch (error) {
+    }
     var d;
     for (d = 0; d < trash.length; d++) {
       trash[i].onclick = function (e) {
@@ -69,8 +72,11 @@ function load2() {
     myTxt = txt[i];
     var li = document.createElement("li");
     li.className = "box";
-    if (window.location.pathname == "/tools/notes.html" || window.location.pathname == "/tools/notes") {
-      console.log("check2")
+    if (
+      window.location.pathname == "/tools/notes.html" ||
+      window.location.pathname == "/tools/notes"
+    ) {
+      console.log("check2");
       document.getElementById("myUL").appendChild(li);
     }
     var span = document.createElement("SPAN");
@@ -140,7 +146,6 @@ function beforeLoad2() {
     localStorage.setItem("link", JSON.stringify(links));
     localStorage.setItem("color", JSON.stringify(colors));
   }
-  
 }
 
 window.addEventListener("beforeunload", function () {
@@ -294,9 +299,9 @@ const newBookmark = () => {
       e.stopPropagation();
       console.log("trash clicked");
       this.parentElement.remove();
-      localStorage.removeItem("name")
-      localStorage.removeItem("color")
-      localStorage.removeItem("link")
+      localStorage.removeItem("name");
+      localStorage.removeItem("color");
+      localStorage.removeItem("link");
     };
   }
   name.value = "";
@@ -423,20 +428,18 @@ function countdownTimer() {
     ctmnts = parseInt(document.getElementById("mns").value) + 0;
     ctsecs = parseInt(document.getElementById("scs").value) * 1;
 
-
     if (isNaN(ctmnts)) ctmnts = 0;
     if (isNaN(ctsecs)) ctsecs = 0;
 
-    
     document.getElementById("mns").value = ctmnts;
     document.getElementById("scs").value = ctsecs;
     startchr = 1;
-    document.getElementById("btnct").setAttribute("disabled", "disabled"); 
+    document.getElementById("btnct").setAttribute("disabled", "disabled");
   }
 
   if (ctmnts == 0 && ctsecs == 0) {
     startchr = 0;
-    document.getElementById("btnct").removeAttribute("disabled"); 
+    document.getElementById("btnct").removeAttribute("disabled");
 
     alert("Time Up");
     return false;
@@ -469,4 +472,21 @@ function countdownTimer() {
   document.getElementById("showmns").innerHTML = fmins;
   document.getElementById("showscs").innerHTML = fsecs;
   setTimeout("countdownTimer()", 1000);
+}
+
+function insert(num) {
+  document.form.textview.value += num;
+}
+function equal() {
+  let exp = document.form.textview.value;
+  if (exp) {
+    document.form.textview.value = eval(exp);
+  }
+}
+function clean() {
+  document.form.textview.value = "";
+}
+function back() {
+  let exp = document.form.textview.value;
+  document.form.textview.value = exp.substring(0, exp.length - 1);
 }
