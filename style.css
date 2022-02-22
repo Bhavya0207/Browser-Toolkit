@@ -573,16 +573,23 @@ img {
   color: lightgray;
 }
 
+
+#calculator{
+  margin-bottom: 40px;
+  height: 100%;
+}
+
 .main-calc {
-  position: absolute;
-  top: 450px;
+  position: relative;
+  top: 240px;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: var(--black-color);
+  background: #111;
   border-radius: 5px;
   padding: 40px;
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--primary-color);
   box-shadow: inset 2px 2px 5px #2a2a2a, inset -5px -5px 10px #2a2a2a;
+  width:fit-content;
 }
 
 .button {
@@ -663,4 +670,10 @@ img {
   /* .clock .display {
     font-size: 1rem;
   } */
+}
+
+@media only screen and (max-width: 350px) {
+  .main-calc{
+    padding: 24px;
+  }
 }
