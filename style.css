@@ -584,12 +584,12 @@ img {
   top: 240px;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #111;
   border-radius: 5px;
   padding: 40px;
-  border: 1px solid var(--primary-color);
+  border: 8px solid var(--primary-color);
   box-shadow: inset 2px 2px 5px #2a2a2a, inset -5px -5px 10px #2a2a2a;
   width:fit-content;
+  box-shadow:  20px 20px 15px black;
 }
 
 .button {
@@ -606,6 +606,7 @@ img {
   color: #111111;
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 
@@ -613,6 +614,7 @@ img {
 .button:active {
   background: #d6d6d6;
   border-color: #d6d6d6;
+  transform: scale(0.95)
 }
 .special {
   background: var(--primary-color);
@@ -621,8 +623,9 @@ img {
 }
 .special:hover,
 .special:active {
-  background: var(--purple-secondary-color);
-  border-color: var(--purple-secondary-color);
+  background: rgba(128,0,128,0.5);
+  border-color: rgba(128,0,128,0.5);
+  transform: scale(0.95)
 }
 .textview {
   outline: none;
