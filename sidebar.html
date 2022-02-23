@@ -2,10 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
-    />
+    <script src="https://kit.fontawesome.com/bb9b6b7828.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Nova+Square&family=Orbitron:wght@500&family=Poppins&display=swap");
@@ -106,8 +103,12 @@
         cursor: pointer;
       }
 
-      i:not(.fa-bars) {
-        color: #800080;
+      i{
+        font-family: fontawesome;
+      }
+
+      .i {
+        color: purple;
       }
 
       @media screen and (max-width: 450px) {
@@ -124,27 +125,27 @@
         <button class="closebtn" onclick="closeNav()">×</button>
         <br />
         <a href="/tools/search.html"
-          ><i class="fas fa-search"></i> Web search</a
+          ><i class="i fa-light fa-magnifying-glass"></i> Web search</a
         >
         <a href="/tools/notes.html"
-          ><i class="far fa-sticky-note"></i> Make Notes</a
+          ><i class="i fa-light fa-note-sticky"></i> Make Notes</a
         >
         <a href="/tools/bookmarks.html"
-          ><i class="far fa-bookmark"></i> Bookmarks</a
+          ><i class="i fa-regular fa-bookmark"></i> Bookmarks</a
         >
-        <a id="menu-clock"><i class="far fa-clock"></i> Clock </a>
+        <a id="menu-clock"><i class="i fa-light fa-clock"></i> Clock </a>
         <div class="menu-links" id="links-clock">
           <a href="/tools/clock.html"
-            ><i class="fas fa-arrow-right"></i> Digital Clock</a
+            ><i class="i fa-light fa-arrow-right"></i> Digital Clock</a
           >
           <a href="/tools/stopwatch.html"
-            ><i class="fas fa-arrow-right"></i> Stopwatch</a
+            ><i class="i fa-light fa-arrow-right"></i> Stopwatch</a
           >
           <a href="/tools/timer.html">
-            <i class="fas fa-arrow-right"></i> Timer
+            <i class="i fa-light fa-arrow-right"></i> Timer
           </a>
         </div>
-        <a href="/tools/calculator.html"><i class="fas fa-calculator"></i> Calculator</a>
+        <a href="/tools/calculator.html"><i class="i fa-light fa-calculator"></i> Calculator</a>
       </div>
     </div>
 

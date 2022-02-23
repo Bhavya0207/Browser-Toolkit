@@ -21,7 +21,6 @@ function load1() {
   }
   var i;
   for (i = 0; i < myName.length; i++) {
-    console.log("Enter ");
     var name = myName[i];
     var color = myColor[i];
     var address = myLink[i];
@@ -474,19 +473,26 @@ function countdownTimer() {
   setTimeout("countdownTimer()", 1000);
 }
 
+
+var calcInput = document.getElementById("calc-view");
+
 function insert(num) {
-  document.form.textview.value += num;
+  calcInput.value += num;
 }
 function equal() {
-  let exp = document.form.textview.value;
-  if (exp) {
-    document.form.textview.value = eval(exp);
+  let exp = calcInput.value;
+  var array = exp.split(/[+-/*]/);
+  if (exp && !array.some(isNaN) && array.length > 1) {
+    calcInput.value = eval(exp);
+  }
+  else{
+    alert("Invalid value")
   }
 }
 function clean() {
-  document.form.textview.value = "";
+  calcInput.value = "";
 }
 function back() {
-  let exp = document.form.textview.value;
-  document.form.textview.value = exp.substring(0, exp.length - 1);
+  let exp = calcInput.value;
+  calcInput.value = exp.substring(0, exp.length - 1);
 }
