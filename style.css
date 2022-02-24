@@ -18,6 +18,20 @@ body {
   color: var(--text-color);
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: var(--purple-secondary-color);
+  border-radius: 100vw;
+  margin-block: .5rem;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 100vw;
+}
+
 /** -------------------------------------------------------------------------- */
 /**                                  Notes css                                 */
 /** -------------------------------------------------------------------------- */
@@ -315,8 +329,6 @@ img {
   transition: transform 250ms;
 }
 
-
-
 /** -------------------------------------------------------------------------- */
 /**                                 Header css                                 */
 /** -------------------------------------------------------------------------- */
@@ -574,8 +586,7 @@ img {
   color: lightgray;
 }
 
-
-#calculator{
+#calculator {
   margin-bottom: 40px;
   height: 100%;
 }
@@ -587,11 +598,11 @@ img {
   transform: translate(-50%, -50%);
   border-radius: 5px;
   padding: 40px;
-  background-color:#000;
+  background-color: #000;
   border: 8px solid var(--primary-color);
   box-shadow: inset 2px 2px 5px #2a2a2a, inset -5px -5px 10px #2a2a2a;
-  width:fit-content;
-  box-shadow:  40px 40px 20px black;
+  width: fit-content;
+  box-shadow: 40px 40px 20px black;
 }
 
 .button {
@@ -611,12 +622,11 @@ img {
   transition: all 0.2s ease-in-out;
 }
 
-
 .button:hover,
 .button:active {
   background: #d6d6d6;
   border-color: #d6d6d6;
-  transform: scale(0.95)
+  transform: scale(0.95);
 }
 .special {
   background: var(--primary-color);
@@ -625,9 +635,9 @@ img {
 }
 .special:hover,
 .special:active {
-  background: rgba(128,0,128,0.5);
-  border-color: rgba(128,0,128,0.5);
-  transform: scale(0.95)
+  background: rgba(128, 0, 128, 0.5);
+  border-color: rgba(128, 0, 128, 0.5);
+  transform: scale(0.95);
 }
 .textview {
   outline: none;
@@ -643,21 +653,20 @@ img {
   box-shadow: inset 2px 2px 5px #fff, inset -2px -2px 5px #2a2a2a;
 }
 
-
 .count-container {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
   margin-top: 25px;
 }
 
 .count-button-container {
-  display:flex;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
 }
 
-.count-button{
+.count-button {
   border-radius: 5px;
   background: var(--primary-color);
   color: #fff;
@@ -674,18 +683,19 @@ img {
   vertical-align: middle;
 }
 
-.count-button:hover,.count-button-reset:hover {
+.count-button:hover,
+.count-button-reset:hover {
   transition: all 0.2s ease-in-out;
   transform: scale(1.05);
   box-shadow: 20px 20px 20px black;
 }
 
-#count{
+#count {
   font-family: "Orbitron";
   font-size: 3rem;
 }
 
-.count-button-reset{
+.count-button-reset {
   border-radius: 5px;
   background: var(--primary-color);
   color: #fff;
@@ -696,11 +706,10 @@ img {
   padding: 18px 10px;
   margin: 10px;
   outline: none;
-  text-transform:capitalize;
+  text-transform: capitalize;
   margin-top: 20px;
   font-family: "poppins";
 }
-
 
 /* ------------------------------ Media queries ----------------------------- */
 
@@ -731,13 +740,13 @@ img {
   #bookmarkBtn {
     width: auto;
   }
-  .count-container{
-    gap:20px;
+  .count-container {
+    gap: 20px;
   }
 }
 
 @media only screen and (max-width: 350px) {
-  .main-calc{
+  .main-calc {
     padding: 24px;
   }
 }

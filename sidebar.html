@@ -15,6 +15,7 @@
       }
 
       .sidebar {
+        direction: rtl;
         height: 100%;
         width: 0;
         position: fixed;
@@ -115,6 +116,20 @@
         color: purple;
       }
 
+      .sidebar::-webkit-scrollbar {
+        width: 7px;
+      }
+
+      .sidebar::-webkit-scrollbar-track {
+        background-color: #301934;
+        border-radius: 100vw;
+        margin-block: 0.2rem;
+      }
+      .sidebar::-webkit-scrollbar-thumb {
+        background: purple;
+        border-radius: 100vw;
+      }
+
       @media screen and (max-width: 450px) {
         #openbtn {
           position: relative;
@@ -124,7 +139,7 @@
   </head>
   <body>
     <div id="mySidebar" class="sidebar">
-      <div id="container" style="display: none">
+      <div id="container" style="display: none; direction: ltr">
         <a href="/index.html" class="logo">BrowserToolkit</a>
         <button class="closebtn" onclick="closeNav()">×</button>
         <br />
