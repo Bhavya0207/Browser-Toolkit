@@ -43,9 +43,8 @@ function load1() {
     bookmark.appendChild(span);
     bookmark.setAttribute("style", color);
     try {
-      bookmarks.appendChild(bookmark); 
-    } catch (error) {
-    }
+      bookmarks.appendChild(bookmark);
+    } catch (error) {}
     var d;
     for (d = 0; d < trash.length; d++) {
       trash[i].onclick = function (e) {
@@ -473,7 +472,6 @@ function countdownTimer() {
   setTimeout("countdownTimer()", 1000);
 }
 
-
 var calcInput = document.getElementById("calc-view");
 
 function insert(num) {
@@ -484,9 +482,8 @@ function equal() {
   var array = exp.split(/[+-/*]/);
   if (exp && !array.some(isNaN) && array.length > 1) {
     calcInput.value = eval(exp);
-  }
-  else{
-    alert("Invalid value")
+  } else {
+    alert("Invalid value");
   }
 }
 function clean() {
@@ -495,4 +492,17 @@ function clean() {
 function back() {
   let exp = calcInput.value;
   calcInput.value = exp.substring(0, exp.length - 1);
+}
+
+let count = document.getElementById("count");
+function countAdd() {
+  count.innerHTML++;
+}
+
+function countMinus() {
+  count.innerHTML--;
+}
+
+function countReset() {
+  count.innerHTML = 0;
 }
