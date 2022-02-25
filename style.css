@@ -673,8 +673,8 @@ img {
   border: solid 1px #fff;
   text-decoration: none;
   cursor: pointer;
-  font-size: 2rem;
-  padding: 18px 10px;
+  font-size: 5rem;
+  /* padding: 0; */
   width: 100px;
   height: 100px;
   margin: 10px;
