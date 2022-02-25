@@ -30,7 +30,7 @@ function load1() {
     var trash = document.getElementsByClassName("closeBtn");
     a.className = "overlay";
     a.setAttribute("href", address);
-    a.setAttribute("target", "_blank");
+    a.setAttribute("target", "blank");
     bookmark.className = "bookmark";
     var span = document.createElement("span");
     span.className = "span";
@@ -225,7 +225,7 @@ function showSlides(n) {
 function searchNet() {
   var links = [
     "http://www.google.com/search?q=",
-    "https://www.youtube.com/results?search_query=",
+    "https://www.youtube.com/results?searchquery=",
     "https://stackoverflow.com/search?q=",
     "https://www.reddit.com/search/?q=",
   ];
@@ -237,7 +237,7 @@ function searchNet() {
   }
   searchInput = searchInput.replace(" ", "+");
   var a = link + searchInput;
-  window.open(a, "_blank");
+  window.open(a, "blank");
   var clearInput = document.getElementById("searchTerm");
   clearInput.value = "";
 }
@@ -261,7 +261,7 @@ const dictSearch = () => {
     return;
   }
   var open = link + word.value;
-  window.open(open, "_blank");
+  window.open(open, "blank");
 };
 
 const newBookmark = () => {
@@ -278,7 +278,7 @@ const newBookmark = () => {
   var trash = document.getElementsByClassName("closeBtn");
   a.className = "overlay";
   a.setAttribute("href", address.value);
-  a.setAttribute("target", "_blank");
+  a.setAttribute("target", "blank");
   bookmark.className = "bookmark";
   var span = document.createElement("span");
   span.className = "span";
@@ -343,7 +343,7 @@ if (
       hr = "0" + hr;
     }
     try {
-      clock.textContent = hr + ":" + min + ":" + sec + " " + day;
+      clock.textcontent = hr + ":" + min + ":" + sec + " " + day;
     } catch (err) {
       console.log("s");
     }
@@ -506,3 +506,58 @@ function countMinus() {
 function countReset() {
   count.innerHTML = 0;
 }
+
+
+var content = [
+  "Search the web",
+  "Make notes",
+  "Create bookmarks",
+  "Clock the time",
+  "calculate",
+  "or just count",
+  "Browser-Toolkit at it"
+];
+var part = 0;
+var index = 0;
+var intervalVal;
+var element = document.querySelector("#text");
+var cursor = document.querySelector("#cursor");
+function Type() { 
+	var text =  content[part].substring(0, index + 1);
+	element.innerHTML = text;
+	index++;
+
+	if(text === content[part]) {
+
+		cursor.style.display = 'none';
+
+		clearInterval(intervalVal);
+		setTimeout(function() {
+			intervalVal = setInterval(Delete, 25);
+			cursor.style.display = "inline-block";
+		}, 1000);
+	}
+}
+function Delete() {
+	var text =  content[part].substring(0, index - 1);
+	element.innerHTML = text;
+	index--;
+
+	if(text === '') {
+		clearInterval(intervalVal);
+
+
+		if(part == (content.length - 1))
+			part = 0;
+		else
+			part++;
+		
+		index = 0;
+
+
+		setTimeout(function() {
+			intervalVal = setInterval(Type, 70);
+		}, 200);
+	}
+}
+intervalVal = setInterval(Type, 70);

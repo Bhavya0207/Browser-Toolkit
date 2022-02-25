@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="icon" href="images/myicon.ico">
+    <link rel="icon" href="images/myicon.ico" />
     <title>Browser-Toolkit</title>
-</head>
-<body>
+  </head>
+  <body>
     <section id="navbar" style="width: 10px; display: flex"></section>
     <script>
       $(function () {
         $("#navbar").load("sidebar.html");
       });
-    </script>   
-    <div class="heading">
-      <h1>Browser-Toolkit</h1>
+    </script>
+    <div class="main-heading">
+      <h1 class="main-title">Browser-Toolkit</h1>
     </div>
-</body>
+
+    <section id="landing">
+      <div class="description">
+        <p class="description-para">
+          <b>Browser-Toolkit</b> is the solution to having to open multiple tabs
+          in a browser and having to find sites for your needs or making a
+          cluster of bookmarks. All the tools in your hand on a single browser
+          tab...
+        </p>
+      </div>
+      <div id="container-type">
+        <div id="text"></div>
+        <div id="cursor"></div>
+      </div>
+      <div class="landing-button-container">
+      <button class="landing-button" onclick="openNav()">Get Started &#8594;</button></div>
+    </section>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
 </html>

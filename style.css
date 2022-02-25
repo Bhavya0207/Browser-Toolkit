@@ -22,10 +22,10 @@ body {
   width: 10px;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   background-color: var(--purple-secondary-color);
   border-radius: 100vw;
-  margin-block: .5rem;
+  margin-block: 0.5rem;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--primary-color);
@@ -312,7 +312,8 @@ img {
   background-color: var(--purple-secondary-color);
 }
 
-.heading {
+.heading,
+.main-heading {
   text-align: center;
   font-family: "Nova Square", cursive;
   padding-bottom: 40px;
@@ -320,13 +321,99 @@ img {
   top: 0;
 }
 
+.main-heading {
+  margin-top: 30px;
+}
+
 .heading h1 {
   display: inline;
+
   color: var(--primary-color);
   box-shadow: 20px 20px 20px black;
-  /* background-color: rgba(10,37,37,0.7); */
   background-color: rgba(255, 255, 255, 0.1);
   transition: transform 250ms;
+}
+
+.main-heading .main-title {
+  color: var(--primary-color);
+  display: inline;
+  font-size: 9vw;
+  background: none;
+  box-shadow: none;
+  border: 2px solid var(--primary-color);
+  padding: 30px 40px;
+  border-radius: 20px;
+  text-shadow: 20px 20px black;
+}
+
+.description {
+  margin: 30px 10%;
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 2em;
+  text-shadow: 0px 10px black;
+}
+
+#container-type {
+  text-align: center;
+  margin-top: 20px;
+  height: 50px;
+}
+
+#text {
+  display: inline-block;
+  vertical-align: middle;
+  color: var(--primary-color);
+  letter-spacing: 2px;
+  position: relative;
+  text-transform: capitalize;
+  font-style: italic;
+  font-weight: bold;
+  font-size:2rem;
+}
+
+#cursor {
+  display: inline-block;
+  vertical-align: middle;
+  width: 3px;
+  height: 40px;
+  background-color: var(--primary-color);
+  animation: blink 0.75s step-end infinite;
+}
+
+.landing-button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.landing-button{
+  background-color: var(--primary-color);
+  border-color: var(--purple-secondary-color);
+  height: 70px;
+  color: var(--text-color);
+  font-size:2rem;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0px 20px;
+  font-family: "orbitron";
+  cursor: pointer;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.landing-button:hover{
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.05);
+}
+
+@keyframes blink {
+  from,
+  to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: var(--primary-color);
+  }
 }
 
 /** -------------------------------------------------------------------------- */
