@@ -1,7 +1,12 @@
 $(document).on("click", ".flip", function () {
   $(this).closest(".box").children(".panel").slideToggle("Fast");
 });
-//localStorage.clear();
+
+console.log(
+  "%cBrowser-Toolkit\n༼ つ ◕_◕ ༽つ",
+  "color:purple; font-size:3rem; text-shadow:10px 1px black; text-decoration:underline; font-weight:bold;"
+);
+
 var myNodelist = document.getElementsByTagName("LI");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
@@ -49,7 +54,7 @@ function load1() {
     for (d = 0; d < trash.length; d++) {
       trash[i].onclick = function (e) {
         e.stopPropagation();
-        console.log("trash clicked");
+
         this.parentElement.remove();
         localStorage.removeItem("name");
         localstorage.removeItem("link");
@@ -74,7 +79,6 @@ function load2() {
       window.location.pathname == "/tools/notes.html" ||
       window.location.pathname == "/tools/notes"
     ) {
-      console.log("check2");
       document.getElementById("myUL").appendChild(li);
     }
     var span = document.createElement("SPAN");
@@ -247,7 +251,6 @@ function enterIsPressed(input, button) {
   searchInputEle.addEventListener("keyup", function (event) {
     var searchButton = document.getElementById(button);
     if (event.key === "Enter") {
-      console.log("Enter ");
       searchButton.click();
     }
   });
@@ -295,7 +298,7 @@ const newBookmark = () => {
   for (i = 0; i < trash.length; i++) {
     trash[i].onclick = function (e) {
       e.stopPropagation();
-      console.log("trash clicked");
+
       this.parentElement.remove();
       localStorage.removeItem("name");
       localStorage.removeItem("color");
@@ -309,7 +312,6 @@ if (
   window.location.pathname == "/tools/bookmarks.html" ||
   window.location.pathname == "/tools/bookmarks"
 ) {
-  console.log("check");
   var addBookmark = document.getElementById("bookmarkBtn");
   addBookmark.onclick = newBookmark;
 }
@@ -318,7 +320,6 @@ if (
   window.location.pathname == "/tools/clock.html" ||
   window.location.pathname == "/tools/clock"
 ) {
-  console.log("x");
   setInterval(function () {
     const clock = document.querySelector(".display");
     let time = new Date();
@@ -344,9 +345,7 @@ if (
     }
     try {
       clock.textcontent = hr + ":" + min + ":" + sec + " " + day;
-    } catch (err) {
-      console.log("s");
-    }
+    } catch (err) {}
   });
 }
 
@@ -507,7 +506,6 @@ function countReset() {
   count.innerHTML = 0;
 }
 
-
 var content = [
   "Search the web",
   "Make notes",
@@ -515,49 +513,44 @@ var content = [
   "Clock the time",
   "calculate",
   "or just count",
-  "Browser-Toolkit at it"
+  "Browser-Toolkit at it",
 ];
 var part = 0;
 var index = 0;
 var intervalVal;
 var element = document.querySelector("#text");
 var cursor = document.querySelector("#cursor");
-function Type() { 
-	var text =  content[part].substring(0, index + 1);
-	element.innerHTML = text;
-	index++;
+function Type() {
+  var text = content[part].substring(0, index + 1);
+  element.innerHTML = text;
+  index++;
 
-	if(text === content[part]) {
+  if (text === content[part]) {
+    cursor.style.display = "none";
 
-		cursor.style.display = 'none';
-
-		clearInterval(intervalVal);
-		setTimeout(function() {
-			intervalVal = setInterval(Delete, 25);
-			cursor.style.display = "inline-block";
-		}, 1000);
-	}
+    clearInterval(intervalVal);
+    setTimeout(function () {
+      intervalVal = setInterval(Delete, 25);
+      cursor.style.display = "inline-block";
+    }, 1000);
+  }
 }
 function Delete() {
-	var text =  content[part].substring(0, index - 1);
-	element.innerHTML = text;
-	index--;
+  var text = content[part].substring(0, index - 1);
+  element.innerHTML = text;
+  index--;
 
-	if(text === '') {
-		clearInterval(intervalVal);
+  if (text === "") {
+    clearInterval(intervalVal);
 
+    if (part == content.length - 1) part = 0;
+    else part++;
 
-		if(part == (content.length - 1))
-			part = 0;
-		else
-			part++;
-		
-		index = 0;
+    index = 0;
 
-
-		setTimeout(function() {
-			intervalVal = setInterval(Type, 70);
-		}, 200);
-	}
+    setTimeout(function () {
+      intervalVal = setInterval(Type, 70);
+    }, 200);
+  }
 }
 intervalVal = setInterval(Type, 70);

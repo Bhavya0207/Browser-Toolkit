@@ -18,6 +18,7 @@ body {
   color: var(--text-color);
 }
 
+/*Scrollbar*/
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -53,6 +54,7 @@ ul li:not(.clock-links li) {
 ul li:hover:not(.clock-links li) {
   background-color: var(--black-secondary-color);
 }
+
 .close {
   position: absolute;
   float: right;
@@ -106,6 +108,7 @@ ul li:hover:not(.clock-links li) {
 #addBtn:hover {
   transform: translateX(5px);
 }
+
 .flip {
   margin-left: 0;
   padding: 5px;
@@ -119,11 +122,13 @@ ul li:hover:not(.clock-links li) {
   border-radius: 20px;
   font-weight: bold;
 }
+
 .flip:hover {
   box-shadow: 5px 10px 30px black;
   transition: all ease 0.2s;
   transform: translateY(-2px);
 }
+
 .panel {
   margin-top: 15px;
   padding: 5px;
@@ -156,6 +161,7 @@ ul li:hover:not(.clock-links li) {
 .mySlides {
   display: none;
 }
+
 img {
   vertical-align: middle;
   height: 200px;
@@ -295,7 +301,6 @@ img {
 
 #dictSearch {
   float: left;
-  /* width: 20%; */
   width: auto;
   padding: 10px;
   background: var(--primary-color);
@@ -555,6 +560,7 @@ img {
   align-items: center;
   justify-content: center;
 }
+
 .clock {
   height: 120px;
   line-height: 120px;
@@ -562,6 +568,7 @@ img {
   padding: 0 30px;
   box-shadow: 20px 20px 20px black;
 }
+
 .clock .display {
   font-size: 8vw;
   color: var(--primary-color);
@@ -715,17 +722,20 @@ img {
   border-color: #d6d6d6;
   transform: scale(0.95);
 }
+
 .special {
   background: var(--primary-color);
   border-color: var(--primary-color);
   color: #fff;
 }
+
 .special:hover,
 .special:active {
   background: rgba(128, 0, 128, 0.5);
   border-color: rgba(128, 0, 128, 0.5);
   transform: scale(0.95);
 }
+
 .textview {
   outline: none;
   width: 240px;
@@ -761,7 +771,7 @@ img {
   text-decoration: none;
   cursor: pointer;
   font-size: 5rem;
-  /* padding: 0; */
+  
   width: 100px;
   height: 100px;
   margin: 10px;
@@ -798,42 +808,56 @@ img {
   font-family: "poppins";
 }
 
-/* ------------------------------ Media queries ----------------------------- */
+/** ------------------------------ Media queries ----------------------------- */
 
 @media only screen and (max-width: 500px) {
   .prev,
   .next {
     font-size: 11px;
   }
+  
   #searchTerm {
     font-size: 1rem;
   }
+  
   .flip {
     width: 80%;
   }
+  
   #dictInput {
     width: 75%;
   }
+  
   #dictSearch {
     font-size: 1rem;
   }
+  
   .heading {
     font-size: 5vw;
   }
+  
   #bookmarkColor,
   #bookmarkBtn {
     width: 25%;
   }
+  
   #bookmarkBtn {
     width: auto;
   }
+  
   .count-container {
     gap: 20px;
   }
+  
+  .landing-button{
+    font-size:1rem;
+  }
+  
 }
 
 @media only screen and (max-width: 350px) {
   .main-calc {
     padding: 24px;
   }
+  
 }

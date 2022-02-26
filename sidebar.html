@@ -25,7 +25,6 @@
         background-color: #000109;
         overflow-x: hidden;
         transition: 0.5s;
-        /* padding-top: 20px; */
         box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
         font-family: "poppins";
       }
@@ -58,6 +57,7 @@
         border: none;
         color: #fff;
       }
+
       .sidebar .closebtn:hover {
         transform: scale(1.2);
       }
@@ -72,6 +72,7 @@
         word-wrap: break-word;
         width: 200px;
       }
+
       .sidebar .logo:hover {
         color: #aa336a;
         transform: scale(1.05);
@@ -187,7 +188,6 @@
         document.getElementById("main").style.marginLeft = "250px";
         document.getElementById("openbtn").style.visibility = "hidden";
         const timeout = setTimeout(() => {
-          console.log("x");
           document.getElementById("container").style.display = "block";
         }, 275);
       }
