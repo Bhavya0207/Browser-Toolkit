@@ -4,7 +4,7 @@ $(document).on("click", ".flip", function () {
 
 console.log(
   "%cBrowser-Toolkit\n༼ つ ◕_◕ ༽つ",
-  "color:purple; font-size:3rem; text-shadow:10px 1px black; text-decoration:underline; font-weight:bold;"
+  "color:purple; font-size:3rem; text-decoration:underline; font-weight:bold;"
 );
 
 var myNodelist = document.getElementsByTagName("LI");
@@ -322,6 +322,7 @@ if (
 ) {
   setInterval(function () {
     const clock = document.querySelector(".display");
+    //console.log(clock)
     let time = new Date();
     let sec = time.getSeconds();
     let min = time.getMinutes();
@@ -344,7 +345,7 @@ if (
       hr = "0" + hr;
     }
     try {
-      clock.textcontent = hr + ":" + min + ":" + sec + " " + day;
+      clock.textContent = hr + ":" + min + ":" + sec + " " + day;
     } catch (err) {}
   });
 }
@@ -506,15 +507,20 @@ function countReset() {
   count.innerHTML = 0;
 }
 
-var content = [
-  "Search the web",
-  "Make notes",
-  "Create bookmarks",
-  "Clock the time",
-  "calculate",
-  "or just count",
-  "Browser-Toolkit at it",
-];
+
+if (
+  window.location.pathname == "/index.html" ||
+  window.location.pathname == "/"
+){
+  var content = [
+    "Search the web",
+    "Make notes",
+    "Create bookmarks",
+    "Clock the time",
+    "calculate",
+    "or just count",
+    "Browser-Toolkit at it",
+  ];
 var part = 0;
 var index = 0;
 var intervalVal;
@@ -554,3 +560,4 @@ function Delete() {
   }
 }
 intervalVal = setInterval(Type, 70);
+}
