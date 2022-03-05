@@ -15,20 +15,25 @@ functionalites and more in one browser tab
     - StackoverFlow
     - Reddit
     - Dictionary
+
 - Making notes
     - With title unlike others
     - Local storage
+
 - Bookmarks
     - Easy to find boookmarks with titles
     - Custom colors
+
 - Clock
     - Digital Clock
     - Stopwatch
     - Timer
+
 - Calculator
     - Four operations
     - Clear and backspace
     - Manual type and buttons
+
 - Counter
     - Simple counter
     - Reset button
